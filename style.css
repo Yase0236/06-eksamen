@@ -1,0 +1,109 @@
+/*skal være på alle sites*/
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+body {
+  background-color: rgb(40, 146, 76);
+}
+main {
+  padding: 2rem;
+  z-index: 1;
+}
+
+menu img {
+  width: 100%;
+  /* padding: 1rem; */
+}
+
+/*header*/
+
+header {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 3vw;
+  gap: 20px;
+  box-shadow: 0 12px 28px 0 rgba(95, 13, 13, 0.3);
+  background-color: antiquewhite;
+}
+
+header a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+header a:hover {
+  color: gray;
+}
+header .logo {
+  text-align: center;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.4rem;
+  overflow-x: auto;
+}
+#menu li {
+  padding: 0.5rem;
+}
+
+#menuknap {
+  font-size: 2.5rem;
+  color: #232dff;
+}
+.logo li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+#menuknap {
+  display: inline-block;
+  padding: 3vw;
+}
+#menu {
+  transition: transform 0.3s;
+  transform-origin: top left;
+  list-style-type: none;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.ikon {
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  #menuknap {
+    display: none;
+  }
+  #menu.hidden {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  #menu {
+    display: flex;
+    gap: 8vw;
+    text-decoration: none;
+    list-style-type: none;
+  }
+}

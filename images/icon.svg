@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="225.766" viewBox="0 0 250 225.766">
+  <g id="Group_5" data-name="Group 5" transform="translate(-1202 -298.234)">
+    <g id="Group_1" data-name="Group 1" transform="translate(1202 304.59)">
+      <g id="Path_2" data-name="Path 2" transform="translate(0 0)" fill="#fff">
+        <path d="M 186.3488006591797 181.9341583251953 L 2.500005483627319 181.9341583251953 L 2.500005483627319 2.500000238418579 L 147.2717895507812 2.500000238418579 L 186.3488006591797 2.500000238418579 L 186.3488006591797 181.9341583251953 Z" stroke="none"/>
+        <path d="M 4.999984741210938 5 L 4.999984741210938 179.4341583251953 L 183.8487854003906 179.4341583251953 L 183.8487854003906 5 L 4.999984741210938 5 M -1.52587890625e-05 0 L 188.8487854003906 0 L 188.8487854003906 184.4341583251953 L -1.52587890625e-05 184.4341583251953 L -1.52587890625e-05 0 Z" stroke="none" fill="#232dff"/>
+      </g>
+      <g id="Path_1" data-name="Path 1" transform="translate(0 0)" fill="#e4b6a2">
+        <path d="M 186.2332611083984 182.1124725341797 L 150.7686767578125 182.1124725341797 L 6.131009578704834 182.1124725341797 L 186.2332611083984 5.942553520202637 L 186.2332611083984 182.1124725341797 Z" stroke="none"/>
+        <path d="M 183.7332763671875 11.8851318359375 L 12.26202392578125 179.6124572753906 L 183.7332763671875 179.6124572753906 L 183.7332763671875 11.8851318359375 M 188.7332763671875 0 L 188.7332763671875 184.6124572753906 L -1.52587890625e-05 184.6124572753906 L 188.7332763671875 0 Z" stroke="none" fill="#232dff"/>
+      </g>
+    </g>
+    <g id="Group_2" data-name="Group 2" transform="translate(1217.697 298.112)">
+      <text id="j" transform="translate(0.303 114.888)" fill="#232dff" font-size="87" font-family="Kremlin"><tspan x="0" y="0">j</tspan></text>
+      <text id="j-2" data-name="j" transform="translate(70.389 18.122) rotate(-180)" fill="#232dff" font-size="87" font-family="Kremlin"><tspan x="0" y="0">j</tspan></text>
+    </g>
+    <text id="JASMIN" transform="translate(1253 431)" fill="#fff" font-size="40" font-family="ZenKurenaido-Regular, Zen Kurenaido"><tspan x="0" y="46">JASMIN</tspan></text>
+  </g>
+</svg>
