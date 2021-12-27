@@ -12,13 +12,19 @@ img {
   width: 100%;
   background-size: cover;
 }
-body {
+/* body {
   background-color: bisque;
+} */
+.grid_section1 {
+  height: 100%;
+  width: 300px;
+  background-size: cover;
 }
 main {
   padding: 2rem;
   z-index: 1;
 }
+
 h1 {
   font-size: 2.5rem;
   font-family: "Plateia", sans-serif;
@@ -47,16 +53,16 @@ h3 {
   margin-bottom: 9px;
   margin-top: 9px;
 }
-/*ny header*/
-menu .logo {
-  width: 300px;
+.logo {
+  width: 100px;
   height: auto;
-  padding: 1rem;
+  float: inline-end;
 }
+/*ny header*/
 
 :root {
   --primColor: #bcbbca;
-  --secoColor: #b46dae;
+  --secoColor: #232dff;
   --cornerRad: 4px;
 }
 body {
