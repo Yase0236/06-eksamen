@@ -13,97 +13,161 @@ img {
   background-size: cover;
 }
 body {
-  background-color: rgb(40, 146, 76);
+  background-color: bisque;
 }
 main {
   padding: 2rem;
   z-index: 1;
 }
-
-menu img {
-  width: 100%;
-  /* padding: 1rem; */
-}
-
-/*header*/
-
-header {
-  position: relative;
-  padding: 1rem 1rem;
-  margin-bottom: 3vw;
-  gap: 20px;
-  box-shadow: 0 12px 28px 0 rgba(95, 13, 13, 0.3);
-  background-color: antiquewhite;
-}
-
-header a {
-  list-style: none;
-  text-decoration: none;
-  color: black;
-}
-
-header a:hover {
-  color: gray;
-}
-header .logo {
-  text-align: center;
-}
-header nav ul {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 0.4rem;
-  overflow-x: auto;
-}
-#menu li {
-  padding: 0.5rem;
-}
-
-#menuknap {
+h1 {
   font-size: 2.5rem;
-  color: #232dff;
+  font-family: "Plateia", sans-serif;
+  padding: 1rem;
+  color: #256086;
+  line-height: 1.15;
+  margin-bottom: 9px;
+  margin-top: 9px;
 }
-.logo li {
-  list-style-type: none;
-  padding: 10px;
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-#menuknap {
-  display: inline-block;
-  padding: 3vw;
-}
-#menu {
-  transition: transform 0.3s;
-  transform-origin: top left;
-  list-style-type: none;
+h2 {
+  font-family: "Zen Kurenaido", sans-serif;
+  line-height: 1.125;
+  margin: 1rem;
+  color: #a397cb;
+  font-size: 1.8rem;
+  margin-bottom: 9px;
+  margin-top: 9px;
 }
 
-li a {
+h3 {
+  font-family: "Zen Kurenaido", sans-serif;
+  line-height: 1.125;
+  margin: 1rem;
+  color: #256086;
+  font-size: 1.5rem;
+  margin-bottom: 9px;
+  margin-top: 9px;
+}
+/*ny header*/
+menu .logo {
+  width: 300px;
+  height: auto;
+  padding: 1rem;
+}
+
+:root {
+  --primColor: #bcbbca;
+  --secoColor: #b46dae;
+  --cornerRad: 4px;
+}
+body {
+  background-color: var(--primColor);
+  font-family: "Zen Kurenaido", sans-serif;
+  font-size: 20px;
+}
+details {
+  margin: 40px;
+}
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 12px 10px;
+  width: 23px;
+  height: 17px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: var(--cornerRad);
+  color: var(--secoColor);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+}
+summary::before,
+summary::after {
+  position: static;
+  top: 0;
+  left: 0;
+}
+summary::before {
+  content: "";
+}
+summary::after {
+  content: "III";
+  letter-spacing: -1px;
+}
+summary:hover {
+  transform: scale(1.1);
+}
+summary::marker {
+  font-size: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .menu {
+  animation-name: menuAnim;
+}
+details[open] summary::before {
+  content: "X";
+}
+details[open] summary::after {
+  content: "";
+}
+.menu {
+  height: 0;
+  width: fit-content;
+  border-radius: var(--cornerRad);
+  background-color: var(--primColor);
+  box-shadow: 0 4px 12px 0 rgba(122, 17, 117, 0.1);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: closeMenu 300ms ease-in-out forwards;
+}
+.menu a {
+  padding: 12px 24px;
+  margin: 0 16px;
+  color: var(--secoColor);
+  border-bottom: 2px solid rgba(122, 17, 117, 0.1);
   text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
 }
-
-.ikon {
-  align-items: center;
+.menu a:nth-of-type(1) {
+  padding-top: 24px;
 }
-
-@media (min-width: 600px) {
-  #menuknap {
-    display: none;
+.menu a:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.menu a:hover {
+  filter: brightness(200%);
+}
+details::before {
+  content: "← Click This Button";
+  color: var(--secoColor);
+  position: absolute;
+  margin-left: 80px;
+  padding: 10px 10px;
+  opacity: 0.4;
+}
+details[open]::before {
+  animation: fadeMe 300ms linear forwards;
+}
+@keyframes menuAnim {
+  0% {
+    height: 0;
   }
-  #menu.hidden {
-    transform: translateX(0);
-    opacity: 1;
+  100% {
+    height: 312px;
   }
-  #menu {
-    display: flex;
-    gap: 8vw;
-    text-decoration: none;
-    list-style-type: none;
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
   }
 }
