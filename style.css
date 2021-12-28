@@ -23,12 +23,16 @@ img {
 main {
   padding: 2rem;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 1200px 1fr);
 }
-
+main .section {
+  grid-column: 2/3;
+}
 h1 {
   font-size: 2.5rem;
   font-family: "Plateia", sans-serif;
-  padding: 1rem;
+  /* padding: 1rem; */
   color: #256086;
   line-height: 1.15;
   margin-bottom: 9px;
@@ -36,7 +40,7 @@ h1 {
 }
 h2 {
   font-family: "Zen Kurenaido", sans-serif;
-  line-height: 1.125;
+  line-height: 1.15;
   margin: 1rem;
   color: #a397cb;
   font-size: 1.8rem;
@@ -46,19 +50,34 @@ h2 {
 
 h3 {
   font-family: "Zen Kurenaido", sans-serif;
-  line-height: 1.125;
+  line-height: 1.15;
   margin: 1rem;
   color: #256086;
   font-size: 1.5rem;
   margin-bottom: 9px;
   margin-top: 9px;
 }
+p {
+  font-family: "Zen Kurenaido", sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 9px;
+  margin-top: 9px;
+  line-height: 1.5;
+  color: #000000;
+}
 .logo {
   width: 100px;
   height: auto;
   float: inline-end;
 }
-/*ny header*/
+
+/*grid sections*/
+@media (min-width: 600px) {
+  .grid_section1 {
+    display: grid;
+  }
+}
+/*header*/
 
 :root {
   --primColor: #bcbbca;
