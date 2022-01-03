@@ -14,19 +14,25 @@
 <body>
 
     <header>
-        <div class="container">
-            <a href="index.html">
-                <img src="../images/icon.svg" alt="logo" class="logo" width="200" height ="70">
-            </a>
+        <a href="index.html">
+            <img src="../images/icon.svg" alt="logo" class="logo" width="200" height ="70">
+        </a>
+
+        <!-- Making it a toggle button (bruges istedet for javascript) -->
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
             
-            <nav>
-                <ul id="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="ommig.html">Om mig</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                </nav>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ommig.html">Om mig</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
             </nav>
-        </div>
+        </nav>
+
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
     </header>    
 
     <main>  

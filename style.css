@@ -18,64 +18,203 @@ body {
   font-family: "Zen Kurenaido", sans-serif;
   font-weight: 400;
 }
-/*header*/
-.container {
-  width: 80%;
-  margin: 0 auto;
+
+/*skal bruges til baggrunden*/
+
+:root {
+  --background: #2381ff;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+main {
+  height: 150vh;
+  background-color: #e4b6a2;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+@media (min-width: 700px) {
+  main {
+    height: 160vh;
+    background-color: #e4b6a2;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+  }
+}
+/***************mobile header**************/
+
 header {
   background-color: #2381ff;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
 }
-header::after {
+/* for at man kan klikke på menuen*/
+.nav-toggle {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, 0.75);
+}
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
   content: "";
-  display: table;
-  clear: both;
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
 }
 nav {
-  float: right;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
 }
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
+/* header::after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
 nav li {
-  display: inline-block;
-  margin-left: 70px;
-  padding-top: 50px;
-  position: relative;
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
+
 nav a {
-  color: #000000;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
 }
 nav a:hover {
   color: #640980;
 }
-nav a::before {
-  content: "";
-  display: block;
-  height: 5px;
-  background-color: #000000;
-
-  position: absolute;
-  top: 0;
-  width: 0%;
-
-  transition: all ease-in-out 250ms;
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
 }
-nav a:hover::before {
-  width: 100%;
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
 }
 
 .logo {
   width: 100px;
   height: auto;
-  float: left;
+  float: right;
+}
+/****************desktop header***************/
+@media screen and (min-width: 700px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    /* // all: unset; */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
 }
 
-/*grid sections*/
+/*******************grid sections**************/
 
 .grid_section1 {
   height: 100%;
@@ -91,8 +230,13 @@ main {
 main .section {
   grid-column: 2/3;
 }
-
-/* størrelser på fonterne*/
+/*grid sections - desktop*/
+@media (min-width: 700px) {
+  .grid_section1 {
+    display: grid;
+  }
+}
+/***********størrelser på fonterne**************/
 h1 {
   font-size: 2.5rem;
   font-family: "Plateia", sans-serif;
@@ -132,10 +276,4 @@ ul {
   /* list-style: none; */
   margin: 1.5rem;
   padding: 0.5rem;
-}
-/*grid sections*/
-@media (min-width: 600px) {
-  .grid_section1 {
-    display: grid;
-  }
 }

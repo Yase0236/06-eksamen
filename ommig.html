@@ -13,20 +13,26 @@
 
 <body>
     <header>
-        <div class="container">
-            <a href="index.html">
-                <img src="../images/icon.svg" alt="logo" class="logo" width="200" height ="70">
-            </a>
+        <a href="index.html">
+            <img src="../images/icon.svg" alt="logo" class="logo" width="200" height ="70">
+        </a>
+
+        <!-- Making it a toggle button (bruges istedet for javascript) -->
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
             
-            <nav>
-                <ul id="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="ommig.html">Om mig</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                </nav>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ommig.html">Om mig</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
             </nav>
-        </div>
-    </header> 
+        </nav>
+
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>   
 
     <main>
         <h1>This is me</h1>
@@ -51,7 +57,7 @@
 
             <h3>Sales advisor elev, Hennez & Mauritz</h3>
             <p>Marts 2019 – Februar 2021</p>
-            
+
             <ul>
                 <li>Varepræsentation/distribution/behandling</li>
                 <li>Indirekte/direkte kundeservice</li>
@@ -63,15 +69,14 @@
 
         </section>
 
-        <br>
         <hr>
         <h2>Lidt om mig</h2>
         <p>Mit navn er Jasmin Ersan og jeg er 27 år gammel. Jeg er pt. studerende på KEA, hvor jeg er ved at færdiggøre mit første semester som multi medie designer.</p>
-        <br>
+        
         <p>Gennem disse 6 måneder er vi blevet introduceret til 5 forskellige temaer hvor vi herunder har lært en del forskellige emner så som webdesign, kodning, UX, animation og video redigering.</p>
     </main>
 
-    <footer>Lavet af Jasmin Ersan</footer>
+    <!-- <footer>Lavet af Jasmin Ersan</footer> -->
 
 </body>
 </html>
