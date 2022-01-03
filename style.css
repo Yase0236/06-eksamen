@@ -51,6 +51,13 @@ h3 {
   color: #256086;
   font-size: 1.5rem;
 }
+a {
+  font-family: "Zen Kurenaido", sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 1rem;
+  color: #640980;
+}
 p {
   font-family: "Zen Kurenaido", sans-serif;
   font-size: 0.9rem;
