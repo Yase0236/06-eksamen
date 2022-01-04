@@ -2,15 +2,27 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 50px;
+  overflow: auto;
+}
+/*skal bruges til baggrunden*/
+:root {
+  --background: #23b7ff;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 img {
   height: 100%;
   width: 100%;
   background-size: cover;
+  padding: 0.5rem;
 }
 body {
   margin: 0;
@@ -18,42 +30,25 @@ body {
   font-family: "Zen Kurenaido", sans-serif;
   font-weight: 400;
 }
-
-/*skal bruges til baggrunden*/
-
-:root {
-  --background: #2381ff;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 main {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 1200px 1fr);
   height: 150vh;
   background-color: #e4b6a2;
   background-blend-mode: multiply;
   background-size: cover;
-  display: grid;
+  margin: 0;
   place-items: center;
 }
-
-@media (min-width: 700px) {
-  main {
-    height: 160vh;
-    background-color: #e4b6a2;
-    background-blend-mode: multiply;
-    background-size: cover;
-    display: grid;
-    place-items: center;
-  }
+main .section {
+  grid: 2/3;
 }
 /***************mobile header**************/
 
 header {
   background-color: #2381ff;
   text-align: center;
-  position: fixed;
+  position: absolute;
   z-index: 999;
   width: 100%;
 }
@@ -64,7 +59,7 @@ header {
   left: -9999px;
 }
 .nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(lightblue, 0.75);
+  outline: 3px solid blue;
 }
 .nav-toggle-label {
   position: absolute;
@@ -75,6 +70,7 @@ header {
   display: flex;
   align-items: center;
 }
+/*turning it into a burger menu*/
 .nav-toggle-label span,
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
@@ -115,12 +111,6 @@ nav ul {
   list-style: none;
 }
 
-/* header::after {
-  content: "";
-  display: table;
-  clear: both;
-} */
-
 nav li {
   margin-bottom: 1em;
   margin-left: 1em;
@@ -132,6 +122,7 @@ nav a {
   font-size: 1.2rem;
   text-transform: uppercase;
   opacity: 0;
+  /* animationen når man lukker menuen */
   transition: opacity 150ms ease-in-out;
 }
 nav a:hover {
@@ -143,6 +134,7 @@ nav a:hover {
 
 .nav-toggle:checked ~ nav a {
   opacity: 1;
+  /* animationen når man åbner menuen */
   transition: opacity 250ms ease-in-out 250ms;
 }
 
@@ -158,8 +150,9 @@ nav a:hover {
   }
 
   header {
+    position: relative;
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    grid-template-columns: 1fr auto minmax(700px, 3fr) 1fr;
   }
 
   .logo {
@@ -175,7 +168,6 @@ nav a:hover {
     background: none;
     top: initial;
     left: initial;
-
     grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
@@ -195,12 +187,11 @@ nav a:hover {
     opacity: 1;
     position: relative;
   }
-
   nav a::before {
     content: "";
     display: block;
     height: 5px;
-    background: black;
+    background: #640980;
     position: absolute;
     top: -0.75em;
     left: 0;
@@ -208,45 +199,151 @@ nav a:hover {
     transform: scale(0, 1);
     transition: transform ease-in-out 250ms;
   }
-
   nav a:hover::before {
     transform: scale(1, 1);
   }
 }
 
-/*******************grid sections**************/
-
-.grid_section1 {
-  height: 100%;
-  width: 300px;
-  background-size: cover;
-}
-main {
-  padding: 2rem;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr minmax(0, 1200px 1fr);
-}
-main .section {
-  grid-column: 2/3;
-}
-/*grid sections - desktop*/
 @media (min-width: 700px) {
-  .grid_section1 {
+  main {
+    height: 160vh;
+    padding: 1rem;
+    background-color: #e4b6a2;
+    background-blend-mode: multiply;
+    background-size: cover;
     display: grid;
+    place-items: center;
   }
 }
+
+/*********************portfolio side*************/
+.row {
+  margin: 8px -16px;
+}
+/*padding rundt om hver column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create two equal columns next to each other */
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  padding: 10px;
+}
+
+/* Responsive layout - two column-layout not four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - two columns stack on top of each other -not next to eachother */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/*********************om mig side - portræt billede*************/
+.portræt {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-size: cover;
+}
+@media (min-width: 700px) {
+  .portræt {
+    height: 100%;
+    width: auto;
+    background-size: cover;
+  }
+}
+
+/*grid section - om mig*/
+.row2 {
+  margin: 8px -16px;
+}
+/*padding rundt om hver column */
+.row2,
+.row2 > .column {
+  padding: 8px;
+}
+
+/* Create two equal columns next to each other */
+.column2 {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after rows */
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content2 {
+  padding: 10px;
+}
+
+/* Responsive layout - two column-layout not four columns */
+@media screen and (max-width: 900px) {
+  .column2 {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - two columns stack on top of each other -not next to eachother */
+@media screen and (max-width: 600px) {
+  .column2 {
+    width: 100%;
+  }
+}
+
+/***************splashbillede information**********/
+.splashbillede {
+  width: 100%;
+  height: 70vh;
+  background-image: url(/images/splashbillede.jpg);
+  background-size: cover;
+}
+@media (min-width: 700px) {
+  .splashbillede {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/images/splashbillede.jpg);
+    background-size: cover;
+    background-position: 30% 20%;
+  }
+}
+
 /***********størrelser på fonterne**************/
 h1 {
   font-size: 2.5rem;
   font-family: "Plateia", sans-serif;
   color: #256086;
+  margin: 0.5rem;
   line-height: 1.15;
 }
 h2 {
   font-family: "Zen Kurenaido", sans-serif;
   line-height: 1.15;
-  margin: 1rem;
+  margin: 0.5rem;
   color: #a397cb;
   font-size: 1.8rem;
 }
@@ -254,7 +351,7 @@ h2 {
 h3 {
   font-family: "Zen Kurenaido", sans-serif;
   line-height: 1.15;
-  margin: 1rem;
+  margin: 0.5rem;
   color: #256086;
   font-size: 1.5rem;
 }
@@ -262,13 +359,16 @@ a {
   font-family: "Zen Kurenaido", sans-serif;
   text-decoration: none;
   font-size: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   color: #640980;
+}
+a:hover {
+  color: #a02eaa;
 }
 p {
   font-family: "Zen Kurenaido", sans-serif;
   font-size: 0.9rem;
-  margin: 1rem;
+  margin: 0.5rem;
   line-height: 2;
   color: #000000;
 }
@@ -276,4 +376,43 @@ ul {
   /* list-style: none; */
   margin: 1.5rem;
   padding: 0.5rem;
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: 2.5rem;
+    font-family: "Plateia", sans-serif;
+    color: #256086;
+    margin: 0.5rem;
+    line-height: 1.15;
+  }
+  h2 {
+    font-family: "Zen Kurenaido", sans-serif;
+    line-height: 1.15;
+    margin: 0.5rem;
+    color: #a397cb;
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-family: "Zen Kurenaido", sans-serif;
+    line-height: 1.15;
+    margin: 0.5rem;
+    color: #256086;
+    font-size: 1.5rem;
+  }
+  a {
+    font-family: "Zen Kurenaido", sans-serif;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0.5rem;
+    color: #640980;
+  }
+  p {
+    font-family: "Zen Kurenaido", sans-serif;
+    font-size: 0.9rem;
+    margin: 0.5rem;
+    line-height: 2;
+    color: #000000;
+  }
 }
