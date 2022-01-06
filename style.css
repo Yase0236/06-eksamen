@@ -331,15 +331,6 @@ nav a:hover {
 .splashbillede img {
   padding: 0;
 }
-@media (min-width: 700px) {
-  .splashbillede {
-    /* width: 100%;
-    height: auto; */
-    /* background-image: url(/images/splashbillede.jpg);
-    background-size: cover;
-    background-position: 30% 20%; */
-  }
-}
 
 @media (max-width: 699px) {
   main {
