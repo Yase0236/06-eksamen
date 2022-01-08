@@ -1,4 +1,4 @@
-/*skal være på alle sites*/
+/*must be on all sites*/
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html {
   scroll-padding-top: 50px;
   overflow: auto;
 }
-/*skal bruges til baggrunden*/
+/*for the header background*/
 :root {
   --background: #23b7ff;
 }
@@ -53,7 +53,7 @@ header {
   z-index: 999;
   width: 100%;
 }
-/* for at man kan klikke på menuen*/
+/*to click on the menu*/
 .nav-toggle {
   position: absolute;
   top: -9999px;
@@ -123,7 +123,7 @@ nav a {
   font-size: 1.2rem;
   text-transform: uppercase;
   opacity: 0;
-  /* animationen når man lukker menuen */
+  /* the animation for closing the menu*/
   transition: opacity 150ms ease-in-out;
 }
 nav a:hover {
@@ -135,7 +135,7 @@ nav a:hover {
 
 .nav-toggle:checked ~ nav a {
   opacity: 1;
-  /* animationen når man åbner menuen */
+  /*the animation for opening the menu */
   transition: opacity 250ms ease-in-out 250ms;
 }
 
@@ -161,7 +161,6 @@ nav a:hover {
   }
 
   nav {
-    /* // all: unset; */
     position: relative;
     text-align: left;
     transition: none;
@@ -217,103 +216,103 @@ nav a:hover {
   }
 }
 
-/*********************portfolio side*************/
+/*********************portfolio site*************/
 .row {
   margin: 8px -16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0px 0px;
 }
-/*padding rundt om hver column */
+/*padding around each column */
 .row,
 .row > .column {
   padding: 8px;
   width: 100%;
 }
 
-/* Create two equal columns next to each other */
+/*two equal columns next to each other */
 .column {
   float: left;
   width: 50%;
 }
 
-/* Clear floats after rows */
+/*Clearing floats after rows */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Content */
+/*Content */
 .content {
   padding: 10px;
 }
 
-/* Responsive layout - two column-layout not four columns */
+/*Responsive layout - two column-layout not four columns */
 @media screen and (max-width: 900px) {
   .column {
     width: 50%;
   }
 }
 
-/* Responsive layout - two columns stack on top of each other -not next to eachother */
+/*Responsive layout - two columns stack on top of each other -not next to eachother */
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
   }
 }
 
-/*********************om mig side - portræt billede*************/
-.portræt {
+/*********************about me site - portrait picture*************/
+.portrait {
   height: 100%;
   width: 100%;
   padding: 1rem;
   background-size: cover;
 }
 @media (min-width: 700px) {
-  .portræt {
+  .portrait {
     height: 100%;
     width: 100%;
     background-size: cover;
   }
 }
 
-/*grid section - om mig*/
+/*grid section - about me*/
 .row2 {
   margin: 8px -16px;
 }
-/*padding rundt om hver column */
+/*padding around each column */
 .row2,
 .row2 > .column {
   padding: 8px;
 }
 
-/* Create two equal columns next to each other */
+/*two equal columns next to each other */
 .column2 {
   float: left;
   width: 50%;
 }
 
-/* Clear floats after rows */
+/*Clearing floats after rows */
 .row2:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Content */
+/*Content */
 .content2 {
   padding: 10px;
 }
 
-/* Responsive layout - two column-layout not four columns */
+/*Responsive layout - two column-layout not four columns */
 @media screen and (max-width: 900px) {
   .column2 {
     width: 50%;
   }
 }
 
-/* Responsive layout - two columns stack on top of each other -not next to eachother */
+/*Responsive layout - two columns stack on top of each other -not next to eachother */
 @media screen and (max-width: 600px) {
   .column2 {
     width: 100%;
@@ -325,8 +324,6 @@ nav a:hover {
   width: 100%;
   height: auto;
   padding: 0;
-  /* background-image: url(/images/splashbillede.jpg);
-  background-size: cover; */
 }
 .splashbillede img {
   padding: 0;
@@ -337,7 +334,7 @@ nav a:hover {
     margin-top: 110px;
   }
 }
-/***********størrelser på fonterne**************/
+/***********sizes of the fonts**************/
 h1 {
   font-size: 2.5rem;
   font-family: "Plateia", sans-serif;
@@ -378,7 +375,6 @@ p {
   color: #000000;
 }
 ul {
-  /* list-style: none; */
   margin: 1.5rem;
   padding: 0.5rem;
 }
