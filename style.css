@@ -28,7 +28,7 @@ body {
 }
 main {
   display: grid;
-  grid-template-columns: 1fr minmax(0, 1200px 1fr);
+  grid-template-columns: 1fr;
   height: 100vh;
   background-color: #e4b6a2;
   background-blend-mode: multiply;
@@ -257,7 +257,7 @@ nav a:hover {
     width: 100%;
   }
 }
-
+/*****************gallery on portfolio site*********/
 div.gallery {
   margin: 5px;
   border: 2px solid #ccc;
@@ -266,7 +266,7 @@ div.gallery {
 }
 
 div.gallery:hover {
-  border: 3px solid rgb(178, 53, 209);
+  border: 2px solid rgb(178, 53, 209);
 }
 
 div.gallery img {
