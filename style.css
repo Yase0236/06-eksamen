@@ -9,7 +9,9 @@ html {
   scroll-padding-top: 50px;
   overflow: auto;
 }
-
+:root {
+  --background: #232dff;
+}
 *,
 *::before,
 *::after {
@@ -61,7 +63,7 @@ header {
 .nav-toggle-label {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 1em;
   margin-left: 1em;
   height: 100%;
   display: flex;
@@ -137,11 +139,13 @@ nav a:hover {
 
 .logo {
   width: 100px;
+  padding: 10px;
+  margin: 10px;
   height: auto;
   float: right;
 }
 /****************desktop header***************/
-@media screen and (min-width: 699px) {
+@media (min-width: 699px) {
   .nav-toggle-label {
     display: none;
   }
@@ -245,38 +249,48 @@ nav a:hover {
 }
 
 /*Responsive layout - two column-layout not four columns */
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .column {
     width: 50%;
   }
 }
 
 /*Responsive layout - two columns stack on top of each other -not next to eachother */
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .column {
     width: 100%;
   }
 }
 /*****************gallery on portfolio site*********/
-div.gallery {
-  margin: 5px;
-  border: 2px solid #ccc;
-  float: left;
-  width: 180px;
-}
 
+div.gallery {
+  padding: 10px;
+  float: left;
+  width: 70%;
+  border: 2px solid wheat;
+}
 div.gallery:hover {
   border: 2px solid rgb(178, 53, 209);
 }
-
 div.gallery img {
   width: 100%;
   height: auto;
 }
 
-div.desc {
-  padding: 15px;
-  text-align: center;
+@media (min-width: 699px) {
+  div.gallery {
+    padding: 10px;
+    float: left;
+    width: 200px;
+    border: 2px solid wheat;
+  }
+  div.gallery:hover {
+    border: 2px solid rgb(178, 53, 209);
+  }
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /*********************about me site - portrait picture*************/
@@ -289,7 +303,7 @@ div.desc {
 @media (min-width: 699px) {
   .portrait {
     height: 100%;
-    width: 100%;
+    width: auto;
     background-size: cover;
   }
 }
@@ -323,14 +337,14 @@ div.desc {
 }
 
 /*Responsive layout - two column-layout not four columns */
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .column2 {
     width: 50%;
   }
 }
 
 /*Responsive layout - two columns stack on top of each other -not next to eachother */
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .column2 {
     width: 100%;
   }
