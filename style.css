@@ -276,7 +276,7 @@ div.gallery img {
   height: auto;
 }
 
-@media (min-width: 699px) {
+@media (max-width: 600px) {
   div.gallery {
     padding: 10px;
     float: left;
