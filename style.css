@@ -264,7 +264,6 @@ nav a:hover {
 /*****************gallery on portfolio site*********/
 
 div.gallery {
-  padding: 10px;
   float: left;
   width: 50%;
   border: 2px solid wheat;
@@ -273,7 +272,7 @@ div.gallery:hover {
   border: 2px solid rgb(178, 53, 209);
 }
 div.gallery img {
-  width: 100%;
+  width: 90%;
   height: auto;
 }
 
@@ -282,13 +281,13 @@ div.gallery img {
     padding: 10px;
     float: left;
     width: 50%;
-    border: 2px solid wheat;
+    /* border: 2px solid wheat; */
   }
-  div.gallery:hover {
+  /* div.gallery:hover {
     border: 2px solid rgb(178, 53, 209);
-  }
+  } */
   div.gallery img {
-    width: 100%;
+    width: 90%;
     height: auto;
   }
 }
