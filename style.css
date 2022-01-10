@@ -296,13 +296,14 @@ div.gallery img {
 /*********************about me site - portrait picture*************/
 .portrait {
   height: 100%;
-  width: 100%;
-  padding: 1rem;
   background-size: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 @media (min-width: 699px) {
   .portrait {
-    height: 100%;
     width: auto;
     background-size: cover;
   }
@@ -341,7 +342,6 @@ div.gallery img {
   .column2 {
     float: right;
     width: 100%;
-    padding: 2em;
   }
 }
 
@@ -372,21 +372,18 @@ h1 {
   font-size: 2.5rem;
   font-family: "Plateia", sans-serif;
   color: #252f86;
-  margin: 0.5rem;
-  line-height: 1.15;
+  margin: 1.5rem;
 }
 h2 {
   font-family: "Zen Kurenaido", sans-serif;
-  line-height: 1.15;
-  margin: 0.5rem;
+  margin: 1.5rem;
   color: #256086;
   font-size: 2rem;
 }
 
 h3 {
   font-family: "Zen Kurenaido", sans-serif;
-  line-height: 1.15;
-  margin: 0.5rem;
+  margin: 1.5rem;
   color: #640980;
   font-size: 1rem;
 }
@@ -394,13 +391,13 @@ a {
   font-family: "Zen Kurenaido", sans-serif;
   text-decoration: none;
   font-size: 1rem;
-  margin: 0.5rem;
+  margin: 1.5rem;
   color: #640980;
 }
 p {
   font-family: "Zen Kurenaido", sans-serif;
   font-size: 0.9rem;
-  margin: 0.5rem;
+  margin: 1.5rem;
   line-height: 2;
   color: #000000;
 }
@@ -408,42 +405,3 @@ ul {
   margin: 1.5rem;
   padding: 0.5rem;
 }
-
-/* @media (min-width: 699px) {
-  h1 {
-    font-size: 2.5rem;
-    font-family: "Plateia", sans-serif;
-    color: #252f86;
-    margin: 0.5rem;
-    line-height: 1.15;
-  }
-  h2 {
-    font-family: "Zen Kurenaido", sans-serif;
-    line-height: 1.15;
-    margin: 0.5rem;
-    color: #256086;
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-family: "Zen Kurenaido", sans-serif;
-    line-height: 1.15;
-    margin: 0.5rem;
-    color: #a397cb;
-    font-size: 1rem;
-  }
-  a {
-    font-family: "Zen Kurenaido", sans-serif;
-    text-decoration: none;
-    font-size: 1rem;
-    margin: 0.5rem;
-    color: #640980;
-  }
-  p {
-    font-family: "Zen Kurenaido", sans-serif;
-    font-size: 0.9rem;
-    margin: 0.5rem;
-    line-height: 2;
-    color: #000000;
-  }
-} */
