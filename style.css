@@ -12,6 +12,7 @@ html {
 :root {
   --background: #232dff;
 }
+/* lige umiddelbart det samme som første kode */
 *,
 *::before,
 *::after {
@@ -57,9 +58,11 @@ header {
   top: -9999px;
   left: -9999px;
 }
+/*hover effect after a click on menu - var(--background)*/
 .nav-toggle:focus ~ .nav-toggle-label {
   outline: 3px solid blue;
 }
+/*placement of burger menu*/
 .nav-toggle-label {
   position: absolute;
   top: 0;
@@ -69,7 +72,7 @@ header {
   display: flex;
   align-items: center;
 }
-/*turning it into a burger menu*/
+/*turning it into a burger menu - only shows span*/
 .nav-toggle-label span,
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
@@ -80,19 +83,21 @@ header {
   border-radius: 2px;
   position: relative;
 }
+/*shows before and after - top/bottom of the lines*/
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
   content: "";
   position: absolute;
 }
-
+/*moves a line down*/
 .nav-toggle-label span::before {
   bottom: 7px;
 }
-
+/*moves a line up*/
 .nav-toggle-label span::after {
   top: 7px;
 }
+/*transform - how the menu looks when there is a click*/
 nav {
   position: absolute;
   text-align: left;
@@ -104,17 +109,18 @@ nav {
   transform-origin: top;
   transition: transform 400ms ease-in-out;
 }
+/*removes margin og padding so menu is in left corner of screen*/
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
+/* margin on again to spreads menu out, but margin-left can be in ul*/
 nav li {
   margin-bottom: 1em;
   margin-left: 1em;
 }
-
+/*how the menu punkterne looks, colors etc-... link inside navigation*/
 nav a {
   color: white;
   text-decoration: none;
@@ -127,10 +133,11 @@ nav a {
 nav a:hover {
   color: #640980;
 }
+/*looking for nav thats a sibling of nav toggle - first preceeding sibling*/
 .nav-toggle:checked ~ nav {
   transform: scale(1, 1);
 }
-
+/*opacity is 0 on top, needs to be opacity 1 here*/
 .nav-toggle:checked ~ nav a {
   opacity: 1;
   /*the animation for opening the menu */
